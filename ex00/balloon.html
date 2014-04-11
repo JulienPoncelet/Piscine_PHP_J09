@@ -3,11 +3,14 @@
 		<style>
 			#balloon {
 				border-radius: 50%;
+				background-color: red;
+				width: 200px;
+				height: 200px;
 			}
 		</style>
 	</head>
 	<body>
-		<div id="balloon" onclick="changeBallon()">
+		<div id="balloon" onclick="changeBallon()" onmouseout="minBallon()">
 		</div>
 		<script>
 			var elem = document.getElementById('balloon');
@@ -18,25 +21,45 @@
 			function changeBallon()
 			{
 				if (elem.style.backgroundColor == "blue")
-					elem.style.backgroundColor = "green";
-				else if (elem.style.backgroundColor == "green")
 					elem.style.backgroundColor = "red";
-				else if (elem.style.backgroundColor == "red")
+				else if (elem.style.backgroundColor == "green")
 					elem.style.backgroundColor = "blue";
+				else if (elem.style.backgroundColor == "red")
+					elem.style.backgroundColor = "green";
 
 				elem.style.width = newW();
-				if (elem.style.width == "450px")
+				elem.style.height = elem.style.width;
+				if (elem.style.width == "430px")
 				{
 					elem.style.width = "200px";
 					elem.style.height = "200px";
 				}
 			}
+
 			function newW()
 			{
 				var next = elem.style.width;
-				next = next.substring(0, 3);
-
+				next = parseInt(next);
+				next = next + 10;
 				return (next);
+			}
+
+			function minBallon()
+			{
+				var ballonWidth = elem.style.width;
+				ballonWidth = parseInt(ballonWidth);
+				if (ballonWidth != 200)
+				{
+					if (elem.style.backgroundColor == "blue")
+						elem.style.backgroundColor = "green";
+					else if (elem.style.backgroundColor == "green")
+						elem.style.backgroundColor = "red";
+					else if (elem.style.backgroundColor == "red")
+						elem.style.backgroundColor = "blue";
+					ballonWidth = ballonWidth - 5;
+					elem.style.width = ballonWidth;
+					elem.style.height = ballonWidth;
+				}
 			}
 		</script>
 	</body>
