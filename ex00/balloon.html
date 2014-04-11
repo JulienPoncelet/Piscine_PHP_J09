@@ -1,0 +1,43 @@
+<html>
+	<head>
+		<style>
+			#balloon {
+				border-radius: 50%;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="balloon" onclick="changeBallon()">
+		</div>
+		<script>
+			var elem = document.getElementById('balloon');
+			elem.style.backgroundColor = "red";
+			elem.style.width = "200px";
+			elem.style.height = "200px";
+
+			function changeBallon()
+			{
+				if (elem.style.backgroundColor == "blue")
+					elem.style.backgroundColor = "green";
+				else if (elem.style.backgroundColor == "green")
+					elem.style.backgroundColor = "red";
+				else if (elem.style.backgroundColor == "red")
+					elem.style.backgroundColor = "blue";
+
+				elem.style.width = newW();
+				if (elem.style.width == "450px")
+				{
+					elem.style.width = "200px";
+					elem.style.height = "200px";
+				}
+			}
+			function newW()
+			{
+				var next = elem.style.width;
+				next = next.substring(0, 3);
+
+				return (next);
+			}
+		</script>
+	</body>
+</html>
