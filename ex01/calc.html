@@ -1,20 +1,24 @@
+<!DOCTYPE HTML>
 <html>
 <head>
 	<title>It's over 9000!</title>
 </head>
 <body onload="setInterval(function() {alert('Please, use me...');}, 30000);" >
-	<form action="calc.html" method="get" accept-charset="utf-8">
-		<input type="text" name="left_member" id="left_member" value="" />
-		<select name="operators" id="operators">
-			<option value="+">+</option>
-			<option value="-">-</option>
-			<option value="*">*</option>
-			<option value="/">/</option>
-			<option value="%">%</option>
-		</select>
-		<input type="text" name="right_member" id="right_member" value="" />
-		<input type="submit" name="submit" id="submit" value="Try me!" />
-	</form>
+	<fieldset>
+		<legend>Calculatrice 42</legend>
+		<form action="calc.html" method="get" accept-charset="utf-8">
+			<input type="text" name="left_member" id="left_member" value="" />
+			<select name="operators" id="operators">
+				<option value="+">+</option>
+				<option value="-">-</option>
+				<option value="*">*</option>
+				<option value="/">/</option>
+				<option value="%">%</option>
+			</select>
+			<input type="text" name="right_member" id="right_member" value="" />
+			<input type="submit" name="submit" id="submit" value="Try me!" />
+		</form>
+	</fieldset>
 	<script>
 		function ft_timer() {document.write("Please, use me...");}
 		var url;
